@@ -1,0 +1,18 @@
+name: publish
+on: [push]
+jobs:
+  publish-hello-docker-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: vijeyash1
+          password: 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
+      - name: Build the hello-docker Docker image
+        run: |
+          docker build . --tag ghcr.io/vijeyash1/hello-docker-gcr-demo:latest
+          docker run ghcr.io/vijeyash1/hello-docker-gcr-demo:latest
+          docker push ghcr.io/vijeyash1/hello-docker-gcr-demo:latest
