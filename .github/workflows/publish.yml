@@ -13,6 +13,6 @@ jobs:
           password: ${{ secrets.GHCR_TOKEN }}
       - name: Build the hello-docker Docker image
         run: |
-          docker build . --tag ghcr.io/vijeyash1/hello-docker-gcr-demo:latest
-          docker run ghcr.io/vijeyash1/hello-docker-gcr-demo:latest
-          docker push ghcr.io/vijeyash1/hello-docker-gcr-demo:latest
+          docker build . --tag ghcr.io/vijeyash1/hello-docker-gcr-demo:stable
+          docker run ghcr.io/vijeyash1/hello-docker-gcr-demo:stable
+          docker push ghcr.io/vijeyash1/hello-docker-gcr-demo:stable
