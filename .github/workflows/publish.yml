@@ -10,7 +10,7 @@ jobs:
         with:
           registry: ghcr.io
           username: vijeyash1
-          password: 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
+          password: ${{ secrets.GHCR_TOKEN }}
       - name: Build the hello-docker Docker image
         run: |
           docker build . --tag ghcr.io/vijeyash1/hello-docker-gcr-demo:latest
